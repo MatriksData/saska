@@ -25,18 +25,13 @@ pub struct Config{
     tcp_port             : u16,
     ws_port              : u16,
     db_port              : u16,
-    mqtt_keep_alive_ms   : u64,
-    system_message_update_period : u64, 
+    mqtt_keep_alive_ms   : u64, 
     log_path             : String,
     // multicast            : Multicast,
     log_level            : String,
     terminal_log_level   : String,
-    broker_url           : String,
-    broker_type          : String,
     sink_buf_size        : usize,
     chan_buf_size        : usize,
-    multicast_port       : String,
-    multicast_ip         : String
 }
 
 impl Config{
@@ -47,21 +42,6 @@ impl Config{
         config_file.read_to_string(&mut config_str).expect("Couldn't read config file!");
         let decoded: Config = from_str(&config_str).expect("Couldn't decode config file!");
         decoded
-    }
-
-    pub fn get_multicast_port(&self) -> &str{
-        &self.multicast_port
-    }
-    pub fn get_multicast_ip(&self) -> &str{
-        &self.multicast_ip
-    }
-
-    pub fn get_broker_url(&self) -> &str{
-        &self.broker_url
-    }
-
-    pub fn get_broker_type(&self) -> &str{
-        &self.broker_type
     }
     
     pub fn get_worker_count(&self) -> usize{
@@ -147,9 +127,5 @@ impl Config{
 
     pub fn get_first_packet_timeout(&self) -> u64{
         self.first_packet_timeout
-    }
-
-    pub fn get_system_message_update_period(&self) -> u64{
-        self.system_message_update_period
     }
 }
