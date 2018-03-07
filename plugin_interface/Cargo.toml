@@ -1,0 +1,11 @@
+[package]
+authors = ["Tarik Binar <tarik.binar@matriksdata.com>"]
+name = "plugin_interface"
+version = "0.1.0"
+[dependencies]
+futures = "*"
+tokio-core = "*"
+
+
+[dependencies.mqtt3]
+git = "https://github.com/tekjar/mqtt3.git"

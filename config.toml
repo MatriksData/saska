@@ -1,0 +1,12 @@
+first_packet_timeout = 10000
+allow_mc             = false
+tcp_port             = 3445
+ws_port              = 8114
+db_port              = 4563
+worker_thread_count  = 4
+log_path             = "./mqtt.log"
+mqtt_keep_alive_ms   = 0
+terminal_log_level   = "info"
+log_level            = "error"
+sink_buf_size        = 1
+chan_buf_size        = 2048

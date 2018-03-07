@@ -1,0 +1,30 @@
+[package]
+authors = ["Tarik Binar <tarik.binar@matriksdata.com>"]
+name = "saska_v2"
+version = "0.1.0"
+[dependencies]
+bytes = "0.4.5"
+futures = "*"
+log = "0.3.8"
+radix_trie = "0.1.2"
+rand = "*"
+serde = "1.0.27"
+serde_derive = "1.0.27"
+simplelog = "0.4.3"
+tokio-core = "0.1.10"
+tokio-io = "0.1.4"
+toml = "0.4.5"
+trust-dns-resolver = "0.7.0"
+websocket = "0.20.2"
+
+[dependencies.mqtt3]
+git = "https://github.com/tekjar/mqtt3.git"
+
+[dependencies.plugin]
+path = "./plugin"
+
+[dependencies.plugin_interface]
+path = "./plugin_interface"
+
+[profile.release]
+debug = true
